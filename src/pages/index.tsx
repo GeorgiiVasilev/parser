@@ -5,7 +5,7 @@ const Index = () => {
   const toast = useToast()
   const mutation = useMutation({
     mutationFn: () => {
-      return fetch("/api/parse/products/csv").then(res => {
+      return fetch("http://ec2-3-79-216-136.eu-central-1.compute.amazonaws.com:8080/parse/products/csv").then(res => {
         return res.blob();
       }).then(blob => {
         const url = window.URL.createObjectURL(blob);
